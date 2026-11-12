@@ -73,24 +73,58 @@ The preview uses example data to make the finished page easy to recognize. It is
 
 ## Quick Start
 
-Use this path to run the solution already included in this repository. For the full from-scratch exercise, continue to [Part 1 — Create the project](#-part-1--create-the-project).
+This route runs the finished project already included here. You do not need to know how to program to follow these setup steps. If your goal is to build the application yourself from an empty template, go to [Part 1 — Create the project](#-part-1--create-the-project) instead.
 
-1. Install Visual Studio with the **ASP.NET and web development** workload, the **.NET 11 SDK**, and a local SQL Server instance. See [Prerequisites](#-prerequisites).
-2. Clone this repository and open `ASP.NET CORE MVC.slnx` in Visual Studio.
-3. Make sure the SQL Server instance in `appsettings.json` is running. The supplied connection string targets the default instance (`Server=.`) and database `MVCCore`.
-4. In **Tools → NuGet Package Manager → Package Manager Console**, select the web project as **Default project**. Apply the migrations already in this repository:
+### Step 1 — Install the required programs
+
+Install Visual Studio with the **ASP.NET and web development** workload, the **.NET 11 SDK**, and SQL Server Developer or Express. Follow the illustrated instructions in [Prerequisites](#-prerequisites) before continuing. SQL Server Management Studio (SSMS) is optional.
+
+### Step 2 — Download the project files
+
+You can download the project without installing Git:
+
+1. Open the [project repository on GitHub](https://github.com/Lagmouchyoussef/-employee-management-mvc).
+2. Click the green **Code** button, then choose **Download ZIP**.
+3. When the download finishes, open your **Downloads** folder.
+4. Right-click the downloaded ZIP file and select **Extract All...**. Choose a folder you can find again, such as **Documents**, then click **Extract**.
+5. Open the extracted folder. Find `ASP.NET CORE MVC.slnx` and double-click it to open the solution in Visual Studio. If Windows asks which app to use, select Visual Studio.
+
+> **What is a solution?** It is the Visual Studio file that opens and organizes this application's project and files. Open `ASP.NET CORE MVC.slnx`; do not open a file from `bin` or `obj`.
+
+### Step 3 — Wait for Visual Studio to prepare the project
+
+Wait for the solution to finish loading and for NuGet restore to complete. In **Solution Explorer**—the panel listing project folders—confirm that `WebApplicationMVCCoreEmsi` is bold. If it is not, right-click it and select **Set as Startup Project**.
+
+### Step 4 — Connect the project to SQL Server
+
+Make sure your local SQL Server service is installed and running. This project's `appsettings.json` is already set to use the default local SQL Server instance (`Server=.`) and the database name `MVCCore`.
+
+If you installed **SQL Server Express** and its instance is named `SQLEXPRESS`, open `appsettings.json` in Visual Studio and change only `Server=.` to `Server=.\SQLEXPRESS`. Keep `Initial Catalog=MVCCore` and the rest of the line unchanged, then save the file with **Ctrl+S**. Do not change the connection string if you installed the default SQL Server instance.
+
+1. In Visual Studio, open **Tools → NuGet Package Manager → Package Manager Console**.
+2. In the console's **Default project** list, select `WebApplicationMVCCoreEmsi`.
+3. Click inside the console, type the command below, and press **Enter**:
 
    ```powershell
    Update-Database
    ```
 
-   Do not run `Add-Migration InitialCreate` on the supplied solution; its migrations are already included.
-5. Set `WebApplicationMVCCoreEmsi` as the startup project, select the **https** profile, and press **Ctrl+F5**.
-6. Choose **Employees** in the navigation bar and run the [CRUD checks](#️-part-10--run-and-test-the-application).
+4. Wait for the command to finish. A successful run ends with `Done.`.
+
+> **Important:** The supplied project already contains its database migrations. Run `Update-Database` to apply them; do **not** run `Add-Migration InitialCreate` on this project.
+
+### Step 5 — Start the website
+
+1. At the top of Visual Studio, select the **https** launch profile next to the green Start button.
+2. Press **Ctrl+F5** (hold **Ctrl** and press **F5**) or select **Debug → Start Without Debugging**.
+3. Wait for your browser to open. In the navigation bar, select **Employees**.
+4. You should see the employee list page. Follow [Part 10 — Run and test the application](#️-part-10--run-and-test-the-application) to try adding, viewing, editing, and deleting a test employee.
+
+> **If the browser or database does not start:** use the [Troubleshooting](#-troubleshooting) table and check the SQL Server instance name first.
 
 ![Original Visual Studio-style mockup highlighting the launch profile, Solution Explorer, and Package Manager Console](docs/images/visual-studio-workspace-mockup.svg)
 
-*Visual Studio-style illustration — an original mockup showing where the launch profile, Solution Explorer, and Package Manager Console appear. The labels and layout are illustrative, not a real screenshot or an exact copy of the IDE.*
+> **Image notice:** The image above is an illustrative mockup, not a real screenshot of Visual Studio. It was created as a visual guide to help you recognize the launch profile, Solution Explorer, and Package Manager Console. Your actual Visual Studio window may look different.
 
 > **Database note:** `Update-Database` creates or updates the `MVCCore` database on the configured SQL Server instance. If you follow the blank-project walkthrough instead, use the database name configured for that project.
 
@@ -164,6 +198,19 @@ To continue with the project in this folder, **do not create a second project**:
 ---
 
 ## 🏗️ How MVC works
+
+### Plain-language glossary
+
+- **Visual Studio:** the program where you open and work on this project.
+- **Solution Explorer:** the panel in Visual Studio that lists your project and its files.
+- **Project:** the application files that Visual Studio builds and runs.
+- **Build:** a check that compiles the code and reports errors before the app starts.
+- **NuGet:** the package manager that downloads the .NET libraries this project needs.
+- **Database:** the place SQL Server stores employee records after you close the browser.
+- **Migration:** a saved set of instructions that creates or updates the database tables.
+- **CRUD:** Create, Read, Update, and Delete—the four basic actions you can perform on employee records.
+
+You can follow the **Quick Start** to run the finished application without editing code. The numbered parts below explain how to build a similar application from a new MVC template.
 
 | Component | Responsibility in this workshop |
 |---|---|
@@ -325,7 +372,7 @@ public class EmployeeContext : DbContext
 
 ### 5.1 Check that SQL Server is running
 
-Open **SQL Server Configuration Manager** or the Windows **Services** app and confirm that your SQL Server service is running.
+SQL Server is a separate program from Visual Studio. It stores the employee records for this application. Open **SQL Server Configuration Manager** or the Windows **Services** app and confirm that the SQL Server service for your installed instance is running. If you installed SQL Server Express, the instance is commonly named `SQLEXPRESS`.
 
 Common local connection strings:
 
