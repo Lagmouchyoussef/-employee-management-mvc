@@ -8,6 +8,16 @@
 
 **Design, build, and run an employee directory with ASP.NET Core MVC, Entity Framework Core, and SQL Server.**
 
+<table align="center">
+  <tr>
+    <td align="center" width="140"><a href="https://visualstudio.microsoft.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg" width="40" height="40" alt="Visual Studio logo" /></a><br /><strong>Visual Studio</strong></td>
+    <td align="center" width="140"><a href="https://dotnet.microsoft.com/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" width="40" height="40" alt=".NET logo" /></a><br /><strong>.NET 11</strong></td>
+    <td align="center" width="140"><a href="https://learn.microsoft.com/dotnet/csharp/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" width="40" height="40" alt="C sharp logo" /></a><br /><strong>C#</strong></td>
+    <td align="center" width="140"><a href="https://learn.microsoft.com/ef/core/"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" width="40" height="40" alt=".NET logo representing Entity Framework Core" /></a><br /><strong>EF Core 11</strong></td>
+    <td align="center" width="140"><a href="https://www.microsoft.com/sql-server"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" width="40" height="40" alt="Microsoft SQL Server logo" /></a><br /><strong>SQL Server</strong></td>
+  </tr>
+</table>
+
 [![ASP.NET Core 11](https://img.shields.io/badge/ASP.NET_Core-11.0-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
 [![Entity Framework Core 11](https://img.shields.io/badge/Entity_Framework_Core-11.0-512BD4?logo=dotnet&logoColor=white)](https://learn.microsoft.com/ef/core/)
 [![SQL Server](https://img.shields.io/badge/Database-SQL_Server-CC2927?logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/sql-server)
