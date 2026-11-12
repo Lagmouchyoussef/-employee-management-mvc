@@ -1,29 +1,34 @@
 <div align="center">
 
-# 👥 Employee Management MVC
+<img src="docs/images/employee-management-logo.svg" width="112" height="112" alt="Employee Management MVC logo" />
 
-### A complete, beginner-friendly ASP.NET Core MVC + Entity Framework Core workshop
+# Employee Management MVC
 
-Build an employee-management website from a blank Visual Studio project to a working SQL Server CRUD application.
+### A practical ASP.NET Core MVC workshop — from Visual Studio setup to a working CRUD application
 
-[![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-11.0-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
-[![Entity Framework Core](https://img.shields.io/badge/Entity_Framework_Core-11.0-512BD4)](https://learn.microsoft.com/ef/core/)
+**Design, build, and run an employee directory with ASP.NET Core MVC, Entity Framework Core, and SQL Server.**
+
+[![ASP.NET Core 11](https://img.shields.io/badge/ASP.NET_Core-11.0-512BD4?logo=dotnet&logoColor=white)](https://dotnet.microsoft.com/)
+[![Entity Framework Core 11](https://img.shields.io/badge/Entity_Framework_Core-11.0-512BD4?logo=dotnet&logoColor=white)](https://learn.microsoft.com/ef/core/)
 [![SQL Server](https://img.shields.io/badge/Database-SQL_Server-CC2927?logo=microsoftsqlserver&logoColor=white)](https://www.microsoft.com/sql-server)
 [![Visual Studio](https://img.shields.io/badge/IDE-Visual_Studio-5C2D91?logo=visualstudio&logoColor=white)](https://visualstudio.microsoft.com/)
+[![GitHub repository](https://img.shields.io/badge/GitHub-Source_Code-181717?logo=github&logoColor=white)](https://github.com/Lagmouchyoussef/-employee-management-mvc)
 
-**Language:** English · **Level:** Beginner · **Estimated time:** 60–90 minutes
+**Workshop language:** English&nbsp;&nbsp;·&nbsp;&nbsp;**Audience:** Beginners&nbsp;&nbsp;·&nbsp;&nbsp;**Estimated time:** 60–90 minutes
 
 </div>
 
-> 📘 **What you will build:** a responsive employee directory with **Create, Read, Update, and Delete (CRUD)** operations, server-side validation, and SQL Server persistence.
+> **Project outcome** — A responsive employee directory with complete **Create, Read, Update, and Delete (CRUD)** workflows, server-side validation, and SQL Server persistence.
 >
-> 🖼️ **Before you begin:** every step-by-step image uses red frames and numbered markers to show exactly which option, field, or button to select. These are annotated illustrative screens—not screenshots captured from your computer. Visual Studio layouts can vary slightly by version.
+> **Illustration note** — The annotated Visual Studio screens and final UI preview in this guide are original illustrations, not screenshots captured from a running copy of your application. Red frames and numbered markers identify the actions to take; your Visual Studio layout may vary slightly by version.
 
 ---
 
-## 📚 Contents
+## Contents
 
-- [🎯 Learning objectives](#-learning-objectives)
+- [Final Result Preview](#final-result-preview)
+- [Quick Start](#quick-start)
+- [Learning objectives](#-learning-objectives)
 - [🧰 Prerequisites](#-prerequisites)
 - [🏗️ How MVC works](#️-how-mvc-works)
 - [🚀 Part 1 — Create the project](#-part-1--create-the-project)
@@ -40,6 +45,50 @@ Build an employee-management website from a blank Visual Studio project to a wor
 - [🧯 Troubleshooting](#-troubleshooting)
 - [✅ Final checklist](#-final-checklist)
 - [🔗 References](#-references)
+
+---
+
+## Final Result Preview
+
+After the application starts, open **Employees** in the navigation bar. The employee directory displays the saved records and provides the actions needed to manage them.
+
+<div align="center">
+
+<img src="docs/images/06-employee-list.svg" alt="Illustrative final employee list with create, edit, details, and delete actions" width="90%" />
+
+**Expected screen:** employee list with a create button, employee details, and row-level CRUD actions.
+
+</div>
+
+The preview uses example data to make the finished page easy to recognize. It is an illustration; your database starts with the records created by your own tests.
+
+| Last Name | First Name | Position | Available actions |
+|---|---|---|---|
+| Smith | Alex | Software Engineer | Edit · Details · Delete |
+| Taylor | Jordan | Project Manager | Edit · Details · Delete |
+
+**Successful workshop checks:** a new employee appears in the list, edited values remain saved, details show the selected record, a deleted test record disappears, and a blank required name is rejected by validation.
+
+---
+
+## Quick Start
+
+Use this path to run the solution already included in this repository. For the full from-scratch exercise, continue to [Part 1 — Create the project](#-part-1--create-the-project).
+
+1. Install Visual Studio with the **ASP.NET and web development** workload, the **.NET 11 SDK**, and a local SQL Server instance. See [Prerequisites](#-prerequisites).
+2. Clone this repository and open `ASP.NET CORE MVC.slnx` in Visual Studio.
+3. Make sure the SQL Server instance in `appsettings.json` is running. The supplied connection string targets the default instance (`Server=.`) and database `MVCCore`.
+4. In **Tools → NuGet Package Manager → Package Manager Console**, select the web project as **Default project**. Apply the migrations already in this repository:
+
+   ```powershell
+   Update-Database
+   ```
+
+   Do not run `Add-Migration InitialCreate` on the supplied solution; its migrations are already included.
+5. Set `WebApplicationMVCCoreEmsi` as the startup project, select the **https** profile, and press **Ctrl+F5**.
+6. Choose **Employees** in the navigation bar and run the [CRUD checks](#️-part-10--run-and-test-the-application).
+
+> **Database note:** `Update-Database` creates or updates the `MVCCore` database on the configured SQL Server instance. If you follow the blank-project walkthrough instead, use the database name configured for that project.
 
 ---
 
@@ -489,9 +538,7 @@ The MVC template already includes the tag helpers required by `asp-controller`, 
 
 *Figure 9 — Select **https**, click **Start Without Debugging** (or press **Ctrl+F5**), then click **Employees** in the browser.*
 
-![Illustrative browser screen showing the finished employee list](docs/images/06-employee-list.svg)
-
-*Figure 10 — Expected result: an employee list with create, edit, details, and delete actions.*
+The finished employee-list preview and example output are shown in [Final Result Preview](#final-result-preview). Use your own test records to verify each CRUD operation.
 
 You can also run the project from a terminal:
 
@@ -579,8 +626,10 @@ The names in the tree are the recommended names for a fresh walkthrough project.
 
 <div align="center">
 
-### 🎉 You now have a complete MVC employee-management application!
+### Workshop complete
 
-**Model** → **Controller** → **View** → **EF Core** → **SQL Server**
+**Model** → **Controller** → **View** → **Entity Framework Core** → **SQL Server**
+
+Built with care by [Youssef Lagmouch](https://github.com/Lagmouchyoussef).
 
 </div>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Employee Management MVC logo</title>
+  <desc id="desc">Original purple app icon with employee silhouettes and a database list symbol.</desc>
+  <defs>
+	<linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+	  <stop offset="0" stop-color="#6d3bb2" />
+	  <stop offset="1" stop-color="#3f1d70" />
+	</linearGradient>
+	<linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+	  <stop offset="0" stop-color="#ffffff" />
+	  <stop offset="1" stop-color="#eee8f8" />
+	</linearGradient>
+  </defs>
+  <rect x="5" y="5" width="150" height="150" rx="36" fill="url(#background)" />
+  <path d="M34 37h92a12 12 0 0 1 12 12v62a12 12 0 0 1-12 12H34a12 12 0 0 1-12-12V49a12 12 0 0 1 12-12Z" fill="url(#card)" />
+  <circle cx="58" cy="69" r="13" fill="#5c2d91" />
+  <path d="M36 103c2-13 10-20 22-20s20 7 22 20v5H36Z" fill="#5c2d91" />
+  <circle cx="91" cy="64" r="10" fill="#9a76c4" />
+  <path d="M76 91c2-10 8-16 17-16s15 6 17 16v4H76Z" fill="#9a76c4" />
+  <path d="M91 103h26M91 113h20" fill="none" stroke="#5c2d91" stroke-linecap="round" stroke-width="5" />
+  <circle cx="119" cy="103" r="3" fill="#5c2d91" />
+  <circle cx="119" cy="113" r="3" fill="#5c2d91" />
+  <path d="M35 128h90" stroke="#d8cce8" stroke-linecap="round" stroke-width="4" />
+</svg>
