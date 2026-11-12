@@ -88,6 +88,10 @@ Use this path to run the solution already included in this repository. For the f
 5. Set `WebApplicationMVCCoreEmsi` as the startup project, select the **https** profile, and press **Ctrl+F5**.
 6. Choose **Employees** in the navigation bar and run the [CRUD checks](#️-part-10--run-and-test-the-application).
 
+![Original Visual Studio-style mockup highlighting the launch profile, Solution Explorer, and Package Manager Console](docs/images/visual-studio-workspace-mockup.svg)
+
+*Visual Studio-style illustration — an original mockup showing where the launch profile, Solution Explorer, and Package Manager Console appear. The labels and layout are illustrative, not a real screenshot or an exact copy of the IDE.*
+
 > **Database note:** `Update-Database` creates or updates the `MVCCore` database on the configured SQL Server instance. If you follow the blank-project walkthrough instead, use the database name configured for that project.
 
 ---
